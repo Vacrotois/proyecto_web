@@ -1,0 +1,866 @@
+*{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{ 
+    --color-background: white;
+    --color-newstitles: #cf443a;/*Borrar*/
+    --color-cajas: white;/*#11111f, borrar*/
+    --color-laliga: #A22c29;
+    --color-fontlaliga: #550000;/*#f8333c*/
+    --color-premierleague: #764b8b;
+    --color-fontpremier: #260339;/*#f8333c*/
+    --color-seriea: #4f628e; 
+    --color-fontseriea: #061539;/*#f8333c*/
+    --color-bundesliga: #a24645;
+    --color-fontbundesliga: #47040d;/*#f8333c*/
+    --color-ligue1: #9ce37d;
+    --color-fontligue1: #033714;/*#f8333c*/
+}
+
+#laliga {
+    background-color: var(--color-laliga);/**/
+    color: var(--color-fontlaliga);/**/
+}
+
+#premierleague {
+    background-color: var(--color-premierleague);
+    color: var(--color-fontpremier);
+}
+
+#seriea {
+    background-color: var(--color-seriea);
+    color: var(--color-fontseriea);
+}
+
+#bundesliga {
+    background-color: var(--color-bundesliga);
+    color: var(--color-fontbundesliga);
+}
+
+#ligue1 {
+    background-color: var(--color-ligue1);
+    color: var(--color-fontligue1);
+}
+
+html {
+    font-family: Verdana, Arial, Helvetica;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px 20px;
+}
+
+header{
+    margin-top: 25px;
+}
+
+header article{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+}
+
+header article img{
+    text-align: center;
+    height: 100%;
+    width: 15vw;
+    margin: 0 75px 0 75px;
+}
+header article h1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.5rem;
+    width: 85vw;
+}
+
+.menu{ 
+    background-color: var(--color-background);/**/
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Innecesario, todas las paginas tendrán el fondo de la caja de color blanco, BORRAR
+#laliga .menu {
+    background-color: var(--color-background);
+}*/
+
+.menu ul { 
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-around;   
+    align-items: center;    
+    height: 10vh;
+}
+
+.menu ul li { 
+    display: inline-block;
+}
+#laliga .menu li a { 
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--color-fontlaliga);           
+}
+
+#premierleague .menu li a { 
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--color-fontpremier);           
+}
+
+#seriea .menu li a { 
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--color-fontseriea);           
+}
+
+#bundesliga .menu li a { 
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--color-fontbundesliga);           
+}
+
+#ligue1 .menu li a { 
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--color-fontligue1);           
+}
+
+#laliga .menu li a:hover { 
+    color: var(--color-laliga);
+}
+
+#premierleague .menu li a:hover { 
+    color: var(--color-premierleague);
+}
+
+#seriea .menu li a:hover { 
+    color: var(--color-seriea);
+}
+
+#bundesliga .menu li a:hover { 
+    color: var(--color-bundesliga);
+}
+
+#ligue1 .menu li a:hover { 
+    color: var(--color-ligue1);
+}
+
+.hamburger{
+    position:fixed;
+    background-color:transparent;
+    left:0;
+    top:0;
+    height:30px;
+    width:30px;
+    padding:20px 20px;
+    -webkit-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+    -webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    z-index:1002;
+    cursor:pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
+.hamburger.is-active{
+    background-color:none;
+}
+._layer{
+    background:#333333;
+    margin-bottom:4px;
+    border-radius:2px;
+    width:28px;
+    height:4px;
+    opacity:1;
+    -webkit-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+    -webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+.hamburger:hover .-top{
+    -webkit-transform:translateY(-100%);
+    -ms-transform:translateY(-100%);
+    transform:translateY(-100%);
+}
+.hamburger:hover .-bottom{
+    -webkit-transform:translateY(100%);
+    -ms-transform:translateY(100%);
+    transform:translateY(100%);
+    }
+.hamburger.is-active .-top{
+    -webkit-transform:translateY(200%) rotate(45deg) !important;
+    -ms-transform:translateY(200%) rotate(45deg) !important;
+    transform:translateY(200%) rotate(45deg) !important;
+}
+.hamburger.is-active .-mid{
+    opacity:0;
+}
+.hamburger.is-active .-bottom{
+    -webkit-transform:translateY(-200%) rotate(135deg) !important;
+    -ms-transform:translateY(-200%) rotate(135deg) !important;
+    transform:translateY(-200%) rotate(135deg) !important;
+}
+
+.menuppal.is_active{
+  transform: translate3d(0px, 0px, 0px);
+}
+.menuppal{
+    background-color: rgba(255, 255, 255, 0.95);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 100%;
+    z-index: 1001;
+}
+.menuppal ul{
+    margin:0;
+    padding:0;
+}
+.menuppal ul li { 
+    list-style: none;
+    text-align:center;
+    font-family: Verdana, Arial, Helvetica;
+    color: nav-color-text;
+    font-size:1.5rem;
+    line-height:3em;
+    height:3em;
+    text-transform:none;
+    font-weight:bold;
+    margin: 30px 0;
+}
+#laliga .menuppal ul li a{
+    text-decoration:none;
+    color: var(--color-fontlaliga);
+}
+#laliga .menuppal ul li a:hover{
+    text-decoration:none;
+    color: var(--color-laliga);
+}
+
+#premierleague .menuppal ul li a{
+    text-decoration:none;
+    color: var(--color-fontpremier);
+}
+#premierleague .menuppal ul li a:hover{
+    text-decoration:none;
+    color: var(--color-premierleague);
+}
+
+#seriea .menuppal ul li a{
+    text-decoration:none;
+    color: var(--color-fontseriea);
+}
+#seriea .menuppal ul li a:hover{
+    text-decoration:none;
+    color: var(--color-seriea);
+}
+
+#bundesliga .menuppal ul li a{
+    text-decoration:none;
+    color: var(--color-fontbundesliga);
+}
+#bundesliga .menuppal ul li a:hover{
+    text-decoration:none;
+    color: var(--color-bundesliga);
+}
+
+#ligue1 .menuppal ul li a{
+    text-decoration:none;
+    color: var(--color-fontligue1);
+}
+#ligue1 .menuppal ul li a:hover{
+    text-decoration:none;
+    color: var(--color-ligue1);
+}
+
+/*main {
+    margin: 0 25px;
+}*/
+
+.resultado span {
+    font-size: 35px;
+}
+
+#novedades {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 25px 0 25px;
+    width: 97%;
+}
+
+.caja_novedades {
+    background-color: var(--color-background);
+    margin-bottom: 50px;
+}
+.novedad {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 350px);
+    gap: 40px;
+}
+
+.articulo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.articulo h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.articulo img {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 215px;
+}
+
+#laliga .articulo a {
+    text-decoration: none;
+    color: var(--color-fontlaliga);
+}
+
+#premierleague .articulo a {
+    text-decoration: none;
+    color: var(--color-fontpremier);
+}
+
+#seriea .articulo a {
+    text-decoration: none;
+    color: var(--color-fontseriea);
+}
+
+#bundesliga .articulo a {
+    text-decoration: none;
+    color: var(--color-fontbundesliga);
+}
+
+#ligue1 .articulo a {
+    text-decoration: none;
+    color: var(--color-fontligue1);
+}
+
+.articulo img {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 215px;
+}
+
+#partidos {
+    display: flex;
+    flex-direction: column;
+    /*margin: 0 10px 40px 0;*/
+    /*background-color: var(--color-cajas);*/
+}
+
+.partidos { /*Afecta al <article> que contiene todas las secciones, tanto la de últimos partidos como la de próximos partidos*/
+    /*display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin-bottom: 40px;
+    background-color: var(--color-cajas);*/
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.partidos {
+    background-color: var(--color-background);
+}
+
+.partidos #ultimos_partidos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    /*display: grid;
+    grid-template-areas: 
+    "div div div";
+    grid-template-columns: 25% 50% 25%;*/
+}
+
+.partidos #proximos_partidos { /*unificar regla con la de arriba*/
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    /*display: grid;
+    grid-template-areas: 
+    "div div div";
+    grid-template-columns: 25% 50% 25%;*/
+}
+
+.partidos .caja_partido {
+    display: grid;
+    grid-template-areas: 
+    "div div div";
+    grid-template-columns: 25% auto 25%;
+    margin: 25px 0;
+}
+
+.equipo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultado {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-background);
+}
+
+.equipo img {
+    height: 60px;
+    cursor: pointer;
+}
+
+#miembros_liga {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-background);
+    margin: 25px 0;
+}
+
+/*.tabla_clubes {
+    display: flex;
+    justify-content: center;    
+    margin-bottom: 25px;
+}*/
+
+table, th, td {
+    /*border: 1px solid white;*/
+    border-collapse: collapse;
+}
+
+#laliga table, th, td {
+    border: 1px solid var(--color-fontlaliga);
+}
+
+#premierleague table, th, td {
+    border: 1px solid var(--color-fontpremier);
+}
+
+#seriea table, th, td {
+    border: 1px solid var(--color-fontpremier);
+}
+
+#bundesliga table, th, td {
+    border: 1px solid var(--color-fontbundesliga);
+}
+
+#ligue1 table, th, td {
+    border: 1px solid var(--color-fontligue1);
+}
+
+table {
+    width: 75%;
+}
+
+th, td {
+    padding: 25px;
+}
+
+th {
+    font-size: 1.5rem;
+}
+
+td {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.tabla_clubes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.tabla_clubes .fila td { /*reglas para los equipos que pertenecen a la liga*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}/*quitar esto, pero modifica la tabla de participantes*/
+
+tr img {
+    height: 60px;
+    margin-right: 20px;
+}
+
+tr img:hover {
+    padding: 0 6px;
+}
+
+#clasificacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.clasificacion {
+    margin-bottom: 25px;
+}
+
+#clasificacion {
+    background-color: var(--color-background);
+}
+
+#clasificacion div {
+    display: flex;
+    justify-content: center;
+}
+
+#clasificacion th {
+    font-size: 1rem;
+}
+
+.fila div {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.fila div img {
+    height: 45px;
+}
+
+#clasificacion .fila tr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 650px) {
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    header article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto; 
+    }
+    
+    header article img{
+        width: 68%;
+        margin: 50px;
+        /*margin-bottom: 15px;*/
+        /*margin: 0 75px 0 75px;*/
+    }
+    header article h1{
+        text-align: center;
+        color: var(--color-font);
+        font-size: 2rem;
+        width: 100%;
+    }    
+
+    .partidos { /*Afecta al <article> que contiene todas las secciones, tanto la de últimos partidos como la de próximos partidos*/
+        display: flex;
+        flex-direction: column;
+        margin-right: 21px;
+        background-color: var(--color-cajas);
+        /*border-radius: ;*/
+    }
+
+    .hamburger{
+        position:fixed;
+        background-color:transparent;
+        left:0;
+        top:0;
+        height:30px;
+        width:30px;
+        padding:20px 20px;
+        -webkit-transform:translate3d(0, 0, 0);
+        transform:translate3d(0, 0, 0);
+        -webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        z-index:1002;
+        cursor:pointer;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none
+    }
+    .hamburger.is-active{
+        background-color:none;
+    }
+    ._layer{
+        background:#333333;
+        margin-bottom:4px;
+        border-radius:2px;
+        width:28px;
+        height:4px;
+        opacity:1;
+        -webkit-transform:translate3d(0, 0, 0);
+        transform:translate3d(0, 0, 0);
+        -webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    }
+    .hamburger:hover .-top{
+        -webkit-transform:translateY(-100%);
+        -ms-transform:translateY(-100%);
+        transform:translateY(-100%);
+    }
+    .hamburger:hover .-bottom{
+        -webkit-transform:translateY(100%);
+        -ms-transform:translateY(100%);
+        transform:translateY(100%);
+        }
+    .hamburger.is-active .-top{
+        -webkit-transform:translateY(200%) rotate(45deg) !important;
+        -ms-transform:translateY(200%) rotate(45deg) !important;
+        transform:translateY(200%) rotate(45deg) !important;
+    }
+    .hamburger.is-active .-mid{
+        opacity:0;
+    }
+    .hamburger.is-active .-bottom{
+        -webkit-transform:translateY(-200%) rotate(135deg) !important;
+        -ms-transform:translateY(-200%) rotate(135deg) !important;
+        transform:translateY(-200%) rotate(135deg) !important;
+    }
+    
+    .menuppal.is_active{
+      transform: translate3d(0px, 0px, 0px);
+    }
+    .menuppal{
+        background-color: rgba(255, 255, 255, 0.95);
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        overflow-y: scroll;
+        position: fixed;
+        top: 0;
+        transform: translate3d(0px, -100%, 0px);
+        transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        width: 100%;
+        z-index: 1001;
+    }
+    .menuppal ul{
+        margin:0;
+        padding:0;
+    }
+    .menuppal ul li { 
+        list-style: none;
+        text-align:center;
+        font-family: Verdana, Arial, Helvetica;
+        color: nav-color-text;
+        font-size:1.5rem;
+        line-height:3em;
+        height:3em;
+        text-transform:none;
+        font-weight:bold;
+    }
+    .menuppal ul li a{
+        text-decoration:none;
+        color:#061f2d;
+    }
+    .menuppal ul li a:hover{
+        text-decoration:none;
+        color: #369;
+    }
+
+    .caja_novedades {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 78%;
+        margin-left: 25px;
+    }
+
+    .clasificacion table {
+        padding: 50px;
+    }
+
+    .clasificacion table thead tr th:nth-child(1) {
+        display: none;
+    }
+    .clasificacion table thead tr th:nth-child(4) {
+        display: none;
+    }
+    .clasificacion table thead tr th:nth-child(5) {
+        display: none;
+    }
+    .clasificacion table thead tr th:nth-child(6) {
+        display: none;
+    }
+    .clasificacion table thead tr th:nth-child(7) {
+        display: none;
+    }
+    .clasificacion table thead tr th:nth-child(8) {
+        display: none;
+    }
+    .clasificacion table thead tr th:nth-child(9) {
+        display: none;
+    }
+
+    .fila td:nth-child(4) {
+        display: none;
+    }
+    .fila td:nth-child(5) {
+        display: none;
+    }
+    .fila td:nth-child(6) {
+        display: none;
+    }
+    .fila td:nth-child(7) {
+        display: none;
+    }
+    .fila td:nth-child(8) {
+        display: none;
+    }
+    .fila td:nth-child(9) {
+        display: none;
+    }
+
+
+    .novedad {
+        display: grid;
+        grid-template-columns: repeat(1, 250px);
+        gap: 25px;    
+    }
+
+    .footer_row {
+        text-align: center;
+    }
+
+    .footer_links {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    header article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 15px auto; 
+    }
+    
+    header article img{
+    
+        margin: 15px auto;
+        /*margin: 0 75px 0 75px;*/
+    }
+    
+    header article h1{
+        text-align: center;
+        color: var(--color-font);
+        font-size: 2rem;
+        width: 100%;
+    }
+    
+    .menu{ 
+        background-color: var(--color-cajas);
+        margin: 10px 0;
+    }
+    
+    .menu li:hover { 
+        color: var(--color-newstitles);
+    }
+    
+    .menu ul { 
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        justify-content: space-around;   
+        align-items: center;    
+        width: 100vw;
+        height: 40vh;
+        
+    }
+    
+    .menu ul li { 
+        display: inline-block;
+    }
+    .menu li a { 
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--color-font);           
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    aside {
+        width: 95%;
+    }
+
+    .partidos .caja_partido {
+        margin-left: 100px;
+    }
+
+    .resultado {
+        margin-right: 90px;
+    }
+
+    .caja_novedades {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 83.5%;
+        margin-left: 25px;
+    }
+
+    .novedad {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        gap: 40px;    
+    }
+
+    .footer_row {
+        text-align: center;
+    }
+
+    .footer_links {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+}
+
+
+
+
+

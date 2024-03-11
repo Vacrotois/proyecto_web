@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Tienes sugerencias? Cuéntanoslas aquí</title>
+    <style>
+        body {
+            background-image: url(/fondoformulario.jpeg);
+            background-size: cover;
+        }
+        /* Estilos para el formulario */
+        form {
+        width: 80%;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+        }
+
+        /* Estilos para los fieldsets */
+        fieldset {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        }
+
+        legend {
+        font-weight: bold;
+        font-size: 1.2em;
+        }
+
+        /* Estilos para los campos de entrada */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box; /* Asegura que el padding no incremente el ancho del elemento */
+        }
+
+        /* Estilos para el botón de enviar */
+        input[type="submit"],
+        input[type="reset"] {
+            color: black;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"]:hover{
+            background-color: #45a049;
+        }
+
+        input[type="reset"]:hover {
+            background-color: red;
+        }
+
+        input[name="nombre"]:valid {
+            background-color: #45a049;
+        }
+
+        input[type="email"]:invalid {
+            background-color: red;
+        }
+
+
+        /* Estilos para etiquetas */
+        label {
+            font-weight: bold;
+        }
+
+        /* Estilos para el select */
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para el campo de archivo */
+        input[type="file"] {
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="mailto:amupan2005@gmail.com" method="get">
+
+        <fieldset>
+
+            <legend>Datos de contacto</legend>
+
+            <label for="nombre">Nombre: </label><input type="text" name="nombre" id="nombre" 
+            placeholder="Escribe tu nombre" required><br>
+            <label for="email">Email: </label><input type="email" name="email" id="email" 
+            placeholder="Escribe tu email" required><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+                <legend>¿Para qué liga tienes una sugerencia?</legend>
+                <!--<input type="radio" name="liga" id="laliga"><label for="albacete">LaLiga</label>
+                <input type="radio" name="liga" id="premierleague"><label for="albacete">Premier League</label>
+                <input type="radio" name="liga" value="seriea"><label for="gu">Serie A</label>
+                <input type="radio" name="liga" value="bundesliga"><label for="to">Bundesliga</label>
+                <input type="radio" name="liga" value="ligue1"><label for="cu">Ligue 1</label>-->
+
+                <label for="estudios">Seleccione una liga: </label>
+                    <select name="ligas" id="ligas"> 
+                        <option value="laliga">LaLiga EA SPORTS</option>
+                        <option value="premierleague">Premier League</option>
+                        <option value="seriea">Serie A TIM</option>
+                        <option value="bundesliga">Bundesliga</option>
+                        <option value="asir">Ligue 1 Uber Eats</option>
+                    </select>
+        </fieldset>
+
+            <br>    
+
+            <fieldset>
+                <legend>Sugerencias</legend>
+                <label for="sugerencias"></label><textarea name="sugerencias" id="sugerencias" cols="75" rows="15" required></textarea><br><br>
+                <label for="file">¿Tienes algún diseño que quieres que modifiquemos? Envíanoslo aquí: </label><input type="file" id="file">
+            </fieldset>
+
+            <br>
+
+    <input type="submit" value="Enviar"><br>
+    <input type="reset" value="Limpiar el formulario"><br>
+    
+    </form>
+
+</body>
+</html>

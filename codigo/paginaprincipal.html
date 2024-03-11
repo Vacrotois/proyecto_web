@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Álvaro Muñoz Panadero" >
+    <meta name="copyright" content="Todos los derechos están reservados para el autor del sitio web" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="¿Te interesa el fútbol y quieres estar informado en todo momento? En esta página encontrarás toda la información de actualidad de las cinco mejores ligas del mundo.">
+    <meta name="keywords" content="LaLiga, Serie A, Ligue 1, Premier League, Bundesliga, fútbol, noticias, deportes, actualidad, partidos, resultados">
+    <title>Big 5 News</title>
+    <link rel="stylesheet" href="paginaprincipal.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../logo/logo2.png" type="image/jpg">
+</head>
+<body>
+
+    <header>
+
+        <article>
+
+            <img src="../logo/logo.png" alt="Logo de 'Big 5 News'">
+
+            <h1>BIG FIVE NEWS</h1>
+
+        </article>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="../ligas/laliga/codigo/laliga.html" target="_blank" id="laliga">LaLiga</a></li>
+                <li><a href="../ligas/premierleague/codigo/premierleague.html" target="_blank" id="premierleague">Premier League</a></li>
+                <li><a href="../ligas/seriea/codigo/seriea.html" target="_blank" id="seriea">Serie A</a></li>
+                <li><a href="../ligas/bundesliga/codigo/bundesliga.html" target="_blank" id="bundesliga">Bundesliga</a></li>
+                <li><a href="../ligas/ligue1/codigo/ligue1.html" target="_blank" id="ligue1">Ligue 1</a></li>
+                <li><a href="#suscripciones_premium">Big 5 Premium</a></li>
+            </ul>
+        </nav>
+
+        <!--Menú para modelo responsive, en el modelo normal se le aplicará display: hidden-->
+        <div class="hamburger">
+            <div class="_layer -top"></div>
+            <div class="_layer -mid"></div>
+            <div class="_layer -bottom"></div>
+        </div>
+        <nav class="menuppal">
+            <ul>
+              <li><a href="../ligas/laliga/codigo/laliga.html" target="_blank">LaLiga</a></li>
+              <li><a href="../ligas/premierleague/codigo/premierleague.html" target="_blank">Premier League</a></li>
+              <li><a href="../ligas/seriea/codigo/seriea.html" target="_blank">Serie A</a></li>
+              <li><a href="../ligas/seriea/codigo/seriea.html" target="_blank">Bundesliga</a></li>
+              <li><a href="../ligas/ligue1/codigo/ligue1.html" target="_blank">Ligue 1</a></li>
+              <li><a href="#suscripciones_premium">Big 5 Premium</a></li>
+            </ul>
+        </nav>
+
+        <!--<div class='console-container'>
+            <span id='text'></span>
+            <div class='console-underscore' id='console'>&#95;</div>
+        </div>-->
+
+
+    </header>
+
+    <main id="grid">
+
+        <aside id="cajas_partidos" class="izquierda">
+
+            <article class="partidos" id="ultimos_partidos">
+
+                <h2>Últimos partidos</h2>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/laliga/clubes/valencia_cf/logo/valencia_cf.png" alt="Logo del Valencia CF">
+                    </div>
+
+                    <div class="resultado">
+                        <span>2</span>
+                        <span>-</span>
+                        <span>2</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/laliga/clubes/real_madrid/logo/real_madrid.png" alt="Logo del Real Madrid">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/laliga/clubes/athletic_bilbao/logo/athletic_bilbao.png" alt="Logo del Athletic de Bilbao">
+                    </div>
+
+                    <div class="resultado">
+                        <span>0</span>
+                        <span>-</span>
+                        <span>0</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/laliga/clubes/fc_barcelona/logo/fc-barcelona.png" alt="Logo del FC Barcelona">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/premierleague/clubes/nottingham_forest/logo/nottingham_forest.png" alt="Logo del Nottingham Forest">
+                    </div>
+
+                    <div class="resultado">
+                        <span>0</span>
+                        <span>-</span>
+                        <span>1</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/premierleague/clubes/liverpool_fc/logo/liverpool_fc.png" alt="Logo del Liverpool FC">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/premierleague/clubes/manchester_city/logo/manchester_city.png" alt="Logo del Manchester City">
+                    </div>
+
+                    <div class="resultado">
+                        <span>3</span>
+                        <span>-</span>
+                        <span>1</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/premierleague/clubes/manchester_united/logo/manchester_united.png" alt="Logo del Manchester United">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/seriea/clubes/ss_lazio/logo/ss_lazio.png" alt="Logo del SS Lazio">
+                    </div>
+
+                    <div class="resultado">
+                        <span>0</span>
+                        <span>-</span>
+                        <span>1</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/seriea/clubes/ac_milan/logo/ac_milan.png" alt="Logo del AC Milan">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/seriea/clubes/ssc_napoli/logo/ssc_napoli.png" alt="Logo del SSC Napoli">
+                    </div>
+
+                    <div class="resultado">
+                        <span>2</span>
+                        <span>-</span>
+                        <span>1</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/seriea/clubes/juventus_turin/logo/juventus_turin.png" alt="Logo de la Juventus de Turin">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/bundesliga/clubes/tsg_hoffenheim/logo/tsg_hoffenheim.png" alt="Logo del TSG Hoffenheim">
+                    </div>
+
+                    <div class="resultado">
+                        <span>2</span>
+                        <span>-</span>
+                        <span>1</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/bundesliga/clubes/werder_bremen/logo/werder_bremen.png" alt="Logo del Werder Bremen">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/bundesliga/clubes/fc_colonia/logo/fc_colonia.png" alt="Logo del FC Colonia">
+                    </div>
+
+                    <div class="resultado">
+                        <span>0</span>
+                        <span>-</span>
+                        <span>2</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/bundesliga/clubes/bayer_leverkusen/logo/bayer_leverkusen.png" alt="Logo del Bayer Leverkusen">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/ligue1/clubes/as_monaco/logo/as_monaco.png" alt="Logo del AS Mónaco">
+                    </div>
+
+                    <div class="resultado">
+                        <span>0</span>
+                        <span>-</span>
+                        <span>0</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/ligue1/clubes/psg_fc/logo/psf_fc.png" alt="Logo del PSG FC">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/ligue1/clubes/toulouse_fc/logo/toulouse_fc.png" alt="Logo del Toulouse FC">
+                    </div>
+
+                    <div class="resultado">
+                        <span>2</span>
+                        <span>-</span>
+                        <span>1</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/ligue1/clubes/ogc_nice/logo/ogc_nize.png" alt="Logo del OGC Niza">
+                    </div>
+                </div>
+                
+            </article>
+
+
+            <article class="partidos" id="proximos_partidos">
+
+                <h2>Próximos partidos</h2>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/laliga/clubes/deportivo_alaves/logo/deportivo_alaves.png" alt="Logo del Deportivo Alavés">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/laliga/clubes/rayo_vallecano/logo/rayo_vallecano.png" alt="Logo del Rayo Vallecano">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/laliga/clubes/girona_fc/logo/girona_fc.png" alt="Logo del Girona FC">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/laliga/clubes/ca_osasuna/logo/ca_osasuna.png" alt="Logo del CA Osasuna">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/premierleague/clubes/liverpool_fc/logo/liverpool_fc.png" alt="Logo del Liverpool FC">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/premierleague/clubes/manchester_city/logo/manchester_city.png" alt="Logo del Manchester City">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/premierleague/clubes/aston_villa/logo/aston_villa.png" alt="Logo del Aston Villa">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/premierleague/clubes/tottenham_hotspur/logo/tottenham_hotspur.png" alt="Logo del Tottenham Hotspur">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/seriea/clubes/us_sassuolo/logo/us_sassuolo.png" alt="Logo del US Sassuolo">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/seriea/clubes/frosinone_calcio/logo/frosinone_calcio.png" alt="Logo del Froscione Calcio">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/seriea/clubes/us_lecce/logo/us_lecce.png" alt="Logo del US Lecce">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/seriea/clubes/hellas_verona/logo/hellas_verona.png" alt="Logo del Hellas Verona">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/bundesliga/clubes/rb_leipzig/logo/rb_leipzig.png" alt="Logo del RB Leipzig">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/bundesliga/clubes/sv_darmstadt/logo/sv_darmstadt.png" alt="Logo del SV Darmstadt">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/bundesliga/clubes/vfl_bochum/logo/vfl_bochum.png" alt="Logo del VFL Bochum">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/bundesliga/clubes/sc_friburgo/logo/sc_friburgo.png" alt="Logo del SC Friburgo">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/ligue1/clubes/rc_lens/logo/rc_lens.png" alt="Logo del RC Lens">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/ligue1/clubes/stade_brestois/logo/stade_brestois.png" alt="Logo del Stade Brestois">
+                    </div>
+                </div>
+
+                <div class="caja_partido">
+                    <div class="equipo">
+                        <img src="../ligas/ligue1/clubes/olympique_marsella/logo/olympique_marsella.png" alt="Logo del Olympique Marsella">
+                    </div>
+
+                    <div class="resultado">
+                        <span>---</span>
+                        <span>-</span>
+                        <span>---</span>
+                    </div>
+
+                    <div class="equipo">
+                        <img src="../ligas/ligue1/clubes/fc_nantes/logo/fc_nantes.png" alt="Logo del FC Nantes">
+                    </div>
+                </div>
+
+            </article>
+
+        </aside>
+
+        <section id="novedades" class="derecha">
+
+            <article class="caja_novedades" id="noticias">
+
+                <h2>Noticias</h2>
+
+                <div class="novedad" id="sector_noticias">
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/lewandoski.webp" alt="Imagen de Lewandoski"></a>
+                        <a href=""><h3>Robert Lewandoski, mejor jugador del mes de LaLiga EA SPORTS en febrero</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/mikamarmol.webp" alt="Imagen de Mika Marmol"></a>
+                        <a href=""><h3>El crack de LaLiga que fichará el Manchester City para cedérselo al Girona</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/golliverpool.webp" alt="Imagen de la victoria del Liverpool"></a>
+                        <a href=""><h3>Épica victoria del Liverpool que puede valer una Premier</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/laziomilan.webp" alt="Imagen del Lazio-Milan"></a>
+                        <a href=""><h3>Meten otro mes en la 'nevera' a Di Bello tras sacar tres rojas y 15 tarjetas en el Lazio-Milan</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/bayernnoticia.webp" alt="Imagen del Bayern Munchen"></a>
+                        <a href=""><h3>El Bayern dice prácticamente adiós a la Bundesliga</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/mbappe.webp" alt="Imagen de Mbappe"></a>
+                        <a href=""><h3>Luis Enrique sigue tensando la cuerda con Mbappé y el PSG vuelve a 'pinchar' en liga</h3></a>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="caja_novedades" id="fichajes">
+
+                <h2>Fichajes</h2>
+
+                <div class="novedad" id="sector_fichajes">
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/alphdavies.webp" alt="Imagen de Davies"></a>
+                        <a href=""><h3>El Real Madrid mira hacia Canadá: ¿Alphonso Davies para reforzar la banda izquierda?</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/gyokeres.webp" alt="Imagen de Gyokeres"></a>
+                        <a href=""><h3>Para el Arsenal, Viktor Gyokeres es prioridad en verano</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/djalo.webp" alt="Imagen de Djalo"></a>
+                        <a href=""><h3>La Juventus se refuerza con Tiago Djaló, que no juega desde hace un año</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/isakhien.webp" alt="Imagen de Isak"></a>
+                        <a href=""><h3>Fichaje confirmado: Atalanta firma a Isak Hien</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/guirassy.webp" alt="Imagen de Guirassy"></a>
+                        <a href=""><h3>FC Bayern München quiere fichar a Serhou Guirassy</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/danjuma.webp" alt="Imagen de Danjuma"></a>
+                        <a href=""><h3>Danjuma puede cambiar de destino: el Olympique de Lyon se interesa por él</h3></a>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="caja_novedades" id="ruedas_prensa">
+
+                <h2>Ruedas de prensa</h2>
+
+                <div class="novedad" id="sector_prensa">
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/ancelotti.webp" alt="Imagen de Ancelotti"></a>
+                        <a href=""><h3>Ancelotti sobre el gol anulado a Bellingham: "Ha sido algo inédito, nunca me había pasado"</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/pepguardiola.webp" alt="Imagen de Guardiola"></a>
+                        <a href=""><h3>El aviso de Guardiola al mundo del fútbol: "Mientras yo esté aquí, intentaremos estar en la cima</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/unayemery.webp" alt="Imagen de Emery"></a>
+                        <a href=""><h3>Emery se 'sale' en la Premier League</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/bellardini.webp" alt="Imagen de Bellardini"></a>
+                        <a href=""><h3>Ballardini da la primera rueda de prensa del Sassuolo: "Apenas he dormido"</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/xabialonso.webp" alt="Imagen de Xabi"></a>
+                        <a href=""><h3>Xabi Alonso se pronuncia sobre su futuro</h3></a>
+                    </div>
+
+                    <div class="articulo">
+                        <a href=""><img src="../ligas/noticias/luisenrique.webp" alt="Imagen de Luis Enrique"></a>
+                        <a href=""><h3>Luis Enrique: "El club y el equipo están por encima de las individualidades"</h3></a>
+                    </div>
+                </div>
+
+            </article>           
+
+        </section>
+
+    </main>
+
+    <h2 class="suscripciones">Suscripciones</h2>
+
+    <div class="container2" id="suscripciones_premium">
+        <div class="tarjeta">
+            <div class="caja">
+                <div class="contenido">
+                    <div class="icono">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </div>                    
+                        <h3>Plan Básico</h3>
+                        <h4>2,50€/mes</h4>
+                        <ul>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>Acceso a más noticias</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>Notificaciones en todo momento</li>
+                            <li><i class="fa fa-times" aria-hidden="true"></i>Acceso a las noticias sin Internet</li>
+                            <li><i class="fa fa-times" aria-hidden="true"></i>App de móvil, tablet y escritorio</li>
+                        </ul>
+                        <a href="">Cómpralo ahora</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <div class="caja">
+                <div class="contenido">
+                    <div class="icono">
+                        <i class="fa fa-plane" aria-hidden="true"></i>
+                    </div>                    
+                        <h3>Plan Estándar</h3>
+                        <h4>5€/mes</h4>
+                        <ul>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>Acceso a más noticias</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>Notificaciones en todo momento</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>Acceso a las noticias sin Internet</li>
+                            <li><i class="fa fa-times" aria-hidden="true"></i>App de móvil, tablet y escritorio</li>
+                        </ul>
+                        <a href="">Cómpralo ahora</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <div class="caja">
+                <div class="contenido">
+                    <div class="icono">
+                        <i class="fa fa-rocket" aria-hidden="true"></i>
+                    </div>                    
+                        <h3>Plan Premium</h3>
+                        <h4>7,50€/mes</h4>
+                        <ul>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>Acceso a más noticias</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>Notificaciones en todo momento</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>Acceso a las noticias sin Internet</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>App de móvil, tablet y escritorio</li>
+                        </ul>
+                        <a href="">Cómpralo ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+
+        <div class="container"> <!--class="redes_sociales"-->
+
+            <div class="footer_row">
+                <div class="footer_links">
+                    <h4>Acerca de nosotros...</h4>
+                    <ul>
+                        <li><a href="">¿Quién soy?</a></li>
+                        <li><a href="">¿A qué me dedico?</a></li>
+                        <li><a href="">Mi pasión por el fútbol</a></li>
+                    </ul>
+                </div>
+                <div class="footer_links">
+                    <h4>¿Quieres aportar tú también?</h4>
+                    <ul>
+                        <li><a href="">Rellena el formulario y envía tus sugerencias</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer_links">
+                    <h4>Redes sociales</h4>
+                    <div class="redes_sociales">
+                        <a href=" "><i class="fa fa-instagram"></i></a>
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook-f"></i></a>
+                        <a href=""><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--<p class="sugerencias">¿Tienes sugerencias para mejorar la página? <a href="formulariosugerencias.html" target="_blank">Envíalas aquí.</a></p>-->
+
+    </footer>
+
+    <script>
+        var menu = document.querySelector('.hamburger');
+
+        // method
+        function toggleMenu (event) {
+            this.classList.toggle('is-active');
+            document.querySelector('.menuppal').classList.toggle('is_active');
+            event.preventDefault();
+        }
+
+        // event
+        menu.addEventListener('click', toggleMenu, false);
+    </script>
+
+    <!--<script>
+
+         consoleText(['LaLiga', 'Premier League', 'Serie A', 'Bundesliga', 'Ligue 1'], 'text',['#A22c29','#4c2c72','#053c5e', '#f8333c', '#9ce37d']);
+
+        function consoleText(words, id, colors) {
+        if (colors === undefined) colors = ['#fff'];
+        var visible = true;
+        var con = document.getElementById('console');
+        var letterCount = 1;
+        var x = 1;
+        var waiting = false;
+        var target = document.getElementById(id)
+        target.setAttribute('style', 'color:' + colors[0])
+        window.setInterval(function() {
+
+            if (letterCount === 0 && waiting === false) {
+            waiting = true;
+            target.innerHTML = words[0].substring(0, letterCount)
+            window.setTimeout(function() {
+                var usedColor = colors.shift();
+                colors.push(usedColor);
+                var usedWord = words.shift();
+                words.push(usedWord);
+                x = 1;
+                target.setAttribute('style', 'color:' + colors[0])
+                letterCount += x;
+                waiting = false;
+            }, 1000)
+            } else if (letterCount === words[0].length + 1 && waiting === false) {
+            waiting = true;
+            window.setTimeout(function() {
+                x = -1;
+                letterCount += x;
+                waiting = false;
+            }, 1000)
+            } else if (waiting === false) {
+            target.innerHTML = words[0].substring(0, letterCount)
+            letterCount += x;
+            }
+        }, 120)
+        window.setInterval(function() {
+            if (visible === true) {
+            con.className = 'console-underscore hidden'
+            visible = false;
+
+            } else {
+            con.className = 'console-underscore'
+
+            visible = true;
+            }
+        }, 400)
+        }
+    </script>-->
+
+</body>
+</html>

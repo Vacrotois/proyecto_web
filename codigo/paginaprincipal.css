@@ -1,0 +1,842 @@
+*{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{ 
+    --color-background: #8cc7cf;
+    --color-font: #061f2d;
+    --color-cajas:  whitesmoke;
+    --color-laliga: #A22c29;
+    --color-premierleague: #764b8b;
+    --color-seriea: #061539;
+    --color-bundesliga: #a24645;
+    --color-ligue1: #9ce37d;
+}
+
+html {
+    background-color: var(--color-background);
+    color: var(--color-font);
+    font-family: Verdana, Arial, Helvetica;
+}
+
+header{  
+    margin-top: 25px;  
+}
+
+header article{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+header article img{
+    width: 15vw;
+    margin: 0 75px 0 75px;
+}
+header article h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-font);
+    font-size: 4.5rem;
+    width: 85vw;
+}
+
+.menu{ 
+    background-color: var(--color-cajas);
+    margin: 10px 0;
+}
+
+.menu li:hover { 
+    color: var(--color-newstitles);
+}
+
+.menu ul { 
+    display: flex;
+    justify-content: space-around;   
+    align-items: center;    
+    height: 10vh;
+}
+
+.menu ul li { 
+    display: inline-block;
+}
+.menu li a { 
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--color-letrasmenu);           
+}
+
+.menu li a:hover {
+    color: var(--color-background);
+}
+
+#laliga:hover {
+    color: var(--color-laliga);
+}
+
+#premierleague:hover {
+    color: var(--color-premierleague);
+}
+
+#seriea:hover {
+    color: var(--color-seriea);
+}
+
+#bundesliga:hover {
+    color: var(--color-bundesliga);
+}
+
+#ligue1:hover {
+    color: var(--color-ligue1);
+}
+
+.hamburger{
+    position:fixed;
+    background-color:transparent;
+    left:0;
+    top:0;
+    height:30px;
+    width:30px;
+    padding:20px 20px;
+    -webkit-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+    -webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    z-index:1002;
+    cursor:pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
+.hamburger.is-active{
+    background-color:none;
+}
+._layer{
+    background:#333333;
+    margin-bottom:4px;
+    border-radius:2px;
+    width:28px;
+    height:4px;
+    opacity:1;
+    -webkit-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+    -webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+.hamburger:hover .-top{
+    -webkit-transform:translateY(-100%);
+    -ms-transform:translateY(-100%);
+    transform:translateY(-100%);
+}
+.hamburger:hover .-bottom{
+    -webkit-transform:translateY(100%);
+    -ms-transform:translateY(100%);
+    transform:translateY(100%);
+    }
+.hamburger.is-active .-top{
+    -webkit-transform:translateY(200%) rotate(45deg) !important;
+    -ms-transform:translateY(200%) rotate(45deg) !important;
+    transform:translateY(200%) rotate(45deg) !important;
+}
+.hamburger.is-active .-mid{
+    opacity:0;
+}
+.hamburger.is-active .-bottom{
+    -webkit-transform:translateY(-200%) rotate(135deg) !important;
+    -ms-transform:translateY(-200%) rotate(135deg) !important;
+    transform:translateY(-200%) rotate(135deg) !important;
+}
+
+.menuppal.is_active{
+  transform: translate3d(0px, 0px, 0px);
+}
+.menuppal{
+    background-color: rgba(255, 255, 255, 0.95);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 100%;
+    z-index: 1001;
+}
+.menuppal ul{
+    margin:0;
+    padding:0;
+}
+.menuppal ul li { 
+    list-style: none;
+    text-align:center;
+    font-family: Verdana, Arial, Helvetica;
+    color: nav-color-text;
+    font-size:1.5rem;
+    line-height:3em;
+    height:3em;
+    text-transform:none;
+    font-weight:bold;
+    margin: 30px 0;
+}
+.menuppal ul li a{
+    text-decoration:none;
+    color:var(--color-font);
+}
+.menuppal ul li a:hover{
+    text-decoration:none;
+    color: var(--color-background);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+    "header header header header header"
+    "aside aside section section section"
+    "footer footer footer footer footer";
+    margin-top: 25px;
+}
+
+aside {
+    margin: 25px;
+    width: 25vw;
+}
+
+.partidos { /*Afecta al <article> que contiene todas las secciones, tanto la de últimos partidos como la de próximos partidos*/
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px 40px 0;
+    background-color: var(--color-cajas);
+    /*border-radius: ;*/
+}
+
+.partidos h2 { /*Aplica a los h2 de ambas secciones de partidos*/
+    color: var(--color-newstitles);
+    text-align: center;
+    margin: 30px 20px; 
+}
+
+.partidos .caja_partido {
+    display: grid;
+    grid-template-columns: 30% auto 30%;
+    margin: 15px;
+}
+
+.equipo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    width: 60px;
+    height: 45px;
+}
+
+.resultado {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-cajas);
+}
+
+.equipo img {
+    height: 50px;
+    cursor: pointer;
+}
+
+/*
+.resultado img {            
+    width: 30px;                
+    height: 30px;                              
+    margin: 0 5px; 
+    background-color: var(--color-cajas);                         
+}*/
+
+.resultado span {
+    font-size: 35px;
+}
+
+
+#novedades {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    width: 112%;
+}
+
+.caja_novedades {
+    margin-bottom: 50px;
+    background-color: var(--color-cajas);
+}
+
+.caja_novedades h2 {
+    color: var(--color-newstitles);
+    text-align: center;
+    margin: 30px 20px;
+}
+
+.novedad {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 350px);
+    gap: 40px;
+}
+
+.articulo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.articulo h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.articulo a {
+    text-decoration: none;
+    color: var(--color-font);
+}
+.articulo img {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 215px;
+}
+
+footer {
+    background-color: #24262B;
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer_row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_links { 
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer_links h4 {
+    display: inline-block;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 10px;
+}
+
+.footer_links ul li {
+    list-style: none;
+}
+
+.footer_links ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    color: #BBBBBB;
+    margin-bottom: 15px;
+    transition: all .3s ease;    
+}
+
+.footer_links ul li a:hover {
+    color:#FFFFFF;
+    padding-left: 6px;
+}
+
+.redes_sociales a {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    min-height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    line-height: 40px;
+    border-radius: 50%;
+    color:#FFFFFF;
+    transition: all .5s ease;
+}
+
+.redes_sociales a:hover {
+    background-color: #00C3FF;
+}
+
+/* Codigo que nombra todas las ligas, posiblemente se vaya a eliminar
+.hidden {
+    opacity:0;
+  }
+.console-container {
+   
+    font-family:Khula;
+    font-size:4em;
+    text-align:center;
+    height:200px;
+    width:600px;
+    display:block;
+    position:absolute;
+    color:white;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    margin-top: 325px;
+}
+.console-underscore {
+     display:inline-block;
+    position:relative;
+    top:-0.14em;
+    left:10px;
+}
+*/
+
+/*Codigo de las suscripciones*/
+.suscripciones {
+    text-align: center;
+    color: var(--color-font);
+    margin-top: 50px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px 0 50px;
+}
+
+.container2 .tarjeta {
+    position: relative;
+    min-width: 320px;
+    height: 500px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                inset  5px 5px 15px rgba(0, 0, 0, 0.3),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 30px;                       
+}
+
+.container2 .tarjeta .caja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background-color: #2a2b2f;
+    border-radius: 15px;
+    border: 2px solid #1e1f23;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);    
+    transition: transform .4s, box-shadow .4s;
+}
+
+.container2 .tarjeta:hover .caja {
+    transform: translateY(-50px);
+    box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+}
+
+.container2 .tarjeta .caja .contenido {
+    text-align: center;
+    padding: 20px;
+}
+
+.container2 .tarjeta .caja .contenido .icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: #f00;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.container2 .tarjeta .caja .contenido .icono .fa {
+    font-size: 2em;
+    color: white;
+}
+
+.container2 .tarjeta .caja .contenido h3 {
+    font-size: 1.8em;
+    font-weight: 300;
+    color: white;
+}
+
+.container2 .tarjeta .caja .contenido h4 {
+    font-size: 2em;
+    font-weight: 700;
+    color: white;
+}
+
+.container2 .tarjeta .caja .contenido ul {
+    position: relative;
+}
+
+.container2 .tarjeta .caja .contenido ul li {
+    list-style: none;
+    color: white;
+    margin: 5px 0;
+}
+
+.container2 .tarjeta .caja .contenido ul li .fa-check {
+    color: #0f0;
+}
+
+.container2 .tarjeta .caja .contenido ul li .fa-times {
+    color: #f00;
+}
+
+.container2 .tarjeta .caja .contenido a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    background: #f00;
+    padding: 8px 20px;
+    margin-top: 15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 400;
+}
+
+.container2 .tarjeta:nth-child(1) .caja .contenido a,
+.container2 .tarjeta:nth-child(1) .caja .contenido .icono {
+    background: #2196f3;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container2 .tarjeta:nth-child(2) .caja .contenido a,
+.container2 .tarjeta:nth-child(2) .caja .contenido .icono {
+    background: #e91e63;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container2 .tarjeta:nth-child(3) .caja .contenido a,
+.container2 .tarjeta:nth-child(3) .caja .contenido .icono {
+    background: #97dc47;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+@media (max-width: 650px) {
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    header article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto; 
+    }
+    
+    header article img{
+        width: 68%;
+        margin: auto;
+        /*margin-bottom: 15px;*/
+        /*margin: 0 75px 0 75px;*/
+    }
+    header article h1{
+        text-align: center;
+        color: var(--color-font);
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    /*
+    .menu{ 
+        background-color: var(--color-cajas);
+        margin: 10px 0;
+    }
+    
+    .menu li:hover { 
+        color: var(--color-newstitles);
+    }
+    
+    .menu ul { 
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        justify-content: space-around;   
+        align-items: center;    
+        width: 100vw;
+        height: 40vh;
+        
+    }
+    
+    .menu ul li { 
+        display: inline-block;
+    }
+    .menu li a { 
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--color-font);           
+    }*/
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    aside {
+        width: 90%;
+    }
+
+    .partidos { /*Afecta al <article> que contiene todas las secciones, tanto la de últimos partidos como la de próximos partidos*/
+        display: flex;
+        flex-direction: column;
+        margin-right: 21px;
+        background-color: var(--color-cajas);
+        /*border-radius: ;*/
+    }
+
+    .hamburger{
+        position:fixed;
+        background-color:transparent;
+        left:0;
+        top:0;
+        height:30px;
+        width:30px;
+        padding:20px 20px;
+        -webkit-transform:translate3d(0, 0, 0);
+        transform:translate3d(0, 0, 0);
+        -webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        z-index:1002;
+        cursor:pointer;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none
+    }
+    .hamburger.is-active{
+        background-color:none;
+    }
+    ._layer{
+        background:#333333;
+        margin-bottom:4px;
+        border-radius:2px;
+        width:28px;
+        height:4px;
+        opacity:1;
+        -webkit-transform:translate3d(0, 0, 0);
+        transform:translate3d(0, 0, 0);
+        -webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    }
+    .hamburger:hover .-top{
+        -webkit-transform:translateY(-100%);
+        -ms-transform:translateY(-100%);
+        transform:translateY(-100%);
+    }
+    .hamburger:hover .-bottom{
+        -webkit-transform:translateY(100%);
+        -ms-transform:translateY(100%);
+        transform:translateY(100%);
+        }
+    .hamburger.is-active .-top{
+        -webkit-transform:translateY(200%) rotate(45deg) !important;
+        -ms-transform:translateY(200%) rotate(45deg) !important;
+        transform:translateY(200%) rotate(45deg) !important;
+    }
+    .hamburger.is-active .-mid{
+        opacity:0;
+    }
+    .hamburger.is-active .-bottom{
+        -webkit-transform:translateY(-200%) rotate(135deg) !important;
+        -ms-transform:translateY(-200%) rotate(135deg) !important;
+        transform:translateY(-200%) rotate(135deg) !important;
+    }
+    
+    .menuppal.is_active{
+      transform: translate3d(0px, 0px, 0px);
+    }
+    .menuppal{
+        background-color: rgba(255, 255, 255, 0.95);
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        overflow-y: scroll;
+        position: fixed;
+        top: 0;
+        transform: translate3d(0px, -100%, 0px);
+        transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        width: 100%;
+        z-index: 1001;
+    }
+    .menuppal ul{
+        margin:0;
+        padding:0;
+    }
+    .menuppal ul li { 
+        list-style: none;
+        text-align:center;
+        font-family: Verdana, Arial, Helvetica;
+        color: nav-color-text;
+        font-size:1.5rem;
+        line-height:3em;
+        height:3em;
+        text-transform:none;
+        font-weight:bold;
+    }
+    .menuppal ul li a{
+        text-decoration:none;
+        color:#061f2d;
+    }
+    .menuppal ul li a:hover{
+        text-decoration:none;
+        color: #369;
+    }
+
+    .caja_novedades {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 78%;
+        margin-left: 25px;
+    }
+
+    .novedad {
+        display: grid;
+        grid-template-columns: repeat(1, 250px);
+        gap: 25px;    
+    }
+
+    .footer_row {
+        text-align: center;
+    }
+
+    .footer_links {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (min-height: 1100px) {
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    header article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 15px auto; 
+    }
+    
+    header article img{
+        width: 68%;
+        margin: 15px auto;
+        /*margin: 0 75px 0 75px;*/
+    }
+    
+    header article h1{
+        text-align: center;
+        color: var(--color-font);
+        font-size: 2rem;
+        width: 100%;
+    }
+    
+    .menu{ 
+        background-color: var(--color-cajas);
+        margin: 10px 0;
+    }
+    
+    .menu li:hover { 
+        color: var(--color-newstitles);
+    }
+    
+    .menu ul { 
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        justify-content: space-around;   
+        align-items: center;    
+        width: 100vw;
+        height: 40vh;
+        
+    }
+    
+    .menu ul li { 
+        display: inline-block;
+    }
+    .menu li a { 
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--color-font);           
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    aside {
+        width: 95%;
+    }
+
+    .partidos .caja_partido {
+        margin-left: 100px;
+    }
+
+    .resultado {
+        margin-right: 90px;
+    }
+
+    .caja_novedades {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 83.5%;
+        margin-left: 25px;
+    }
+
+    .novedad {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        gap: 40px;    
+    }
+
+    .footer_row {
+        text-align: center;
+    }
+
+    .footer_links {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+}
